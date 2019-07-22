@@ -32,7 +32,7 @@ done
 sleep 1
 
 echo "start sysbench benchmark..."
-sudo cgexec -g cpu:sysbench sysbench --report-interval=1 --time=$bench_time --threads=$1 oltp_read_only.lua --mysql-host=localhost --mysql-port=3306 --mysql-user=root --mysql-password=lc0322dh --mysql-db=sbtest --table-size=10000000 run &> ./log/$log_prefix"_"$1.log
+sudo cgexec -g cpu:sysbench sysbench --report-interval=1 --time=$bench_time --threads=$1 oltp_read_only.lua --mysql-host=localhost --mysql-port=3306 --mysql-user=root --mysql-password=<your_mysql_password> --mysql-db=sbtest --table-size=10000000 run &> ./log/$log_prefix"_"$1.log
 sleep 1
 
 sudo pkill gemmbench
